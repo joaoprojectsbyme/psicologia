@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Marina Silva - Psicóloga Clínica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4A6FA5;
+            --secondary: #6B8CBC;
+            --accent: #AED9E0;
+            --light: #F7F9FC;
+            --dark: #2C3E50;
+            --text: #4A5568;
+            --green: #68B3A3;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(74, 111, 165, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(174, 217, 224, 0.3);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(174, 217, 224, 0.4);
+            background-color: #9BCFD9;
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--dark);
+            text-align: left;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Sobre */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Especialidades */
+        .specialties {
+            background-color: var(--light);
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .specialty-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 40px 25px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .specialty-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .specialty-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .specialty-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .specialty-description {
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        /* Abordagem */
+        .approach {
+            background-color: white;
+        }
+
+        .approach-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .approach-text {
+            flex: 1;
+        }
+
+        .approach-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .approach-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Benefícios */
+        .benefits {
+            background-color: var(--light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Depoimentos */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: """;
+            font-size: 5rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 2px solid var(--accent);
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .testimonial-info p {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(45deg);
+        }
+
+        /* Contato */
+        .contact {
+            background-color: white;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: white;
+            font-size: 1rem;
+            color: var(--text);
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #CCCCCC;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #AAAAAA;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content, .approach-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-image, .approach-image {
+                margin-top: 30px;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px 0;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-brain"></i>
+                    Dra. Marina Silva
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#specialties">Especialidades</a></li>
+                    <li><a href="#approach">Abordagem</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Agendar Consulta</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Cuidando da Sua Saúde Mental</h1>
+                <p>Psicóloga clínica com especialização em Terapia Cognitivo-Comportamental. Ofereço um espaço seguro e acolhedor para seu processo de autoconhecimento e desenvolvimento pessoal.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Agendar Consulta</a>
+                    <a href="#about" class="btn btn-secondary">Conhecer Abordagem</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Sou Marina Silva, psicóloga clínica formada pela Universidade de São Paulo (USP) com mestrado em Psicologia Clínica. Atuo há mais de 10 anos ajudando pessoas a superarem desafios emocionais e desenvolverem ferramentas para uma vida mais plena.</p>
+                    <p>Minha abordagem é baseada na Terapia Cognitivo-Comportamental (TCC), uma das abordagens mais estudadas e eficazes para diversos transtornos psicológicos. Acredito no potencial transformador da terapia quando há uma parceria genuína entre terapeuta e paciente.</p>
+                    <p>Além do atendimento clínico, participo regularmente de grupos de estudo e congressos para me manter atualizada sobre as mais recentes pesquisas e técnicas em psicologia.</p>
+                    <a href="#specialties" class="btn btn-primary">Ver Especialidades</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dra. Marina Silva">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="specialties" id="specialties">
+        <div class="container">
+            <h2>Especialidades</h2>
+            <div class="specialties-grid">
+                <!-- Especialidade 1 -->
+                <div class="specialty-item">
+                    <div class="specialty-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="specialty-title">Ansiedade</h3>
+                    <p class="specialty-description">Tratamento para transtornos de ansiedade, síndrome do pânico, fobias e TAG através de técnicas comprovadas de regulação emocional.</p>
+                </div>
+                
+                <!-- Especialidade 2 -->
+                <div class="specialty-item">
+                    <div class="specialty-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3 class="specialty-title">Depressão</h3>
+                    <p class="specialty-description">Acompanhamento para depressão e distimia, com foco na reconstrução de atividades prazerosas e reestruturação cognitiva.</p>
+                </div>
+                
+                <!-- Especialidade 3 -->
+                <div class="specialty-item">
+                    <div class="specialty-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="specialty-title">Relacionamentos</h3>
+                    <p class="specialty-description">Terapia para questões conjugais, familiares e interpessoais, desenvolvendo habilidades de comunicação e resolução de conflitos.</p>
+                </div>
+                
+                <!-- Especialidade 4 -->
+                <div class="specialty-item">
+                    <div class="specialty-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="specialty-title">Autoestima</h3>
+                    <p class="specialty-description">Desenvolvimento de autoconfiança, autocompaixão e autoaceitação através de técnicas de reestruturação de crenças disfuncionais.</p>
+                </div>
+                
+                <!-- Especialidade 5 -->
+                <div class="specialty-item">
+                    <div class="specialty-icon">
+                        <i class="fas fa-burn"></i>
+                    </div>
+                    <h3 class="specialty-title">Estresse</h3>
+                    <p class="specialty-description">Manejo do estresse e desenvolvimento de resiliência através de técnicas de relaxamento e reavaliação cognitiva.</p>
+                </div>
+                
+                <!-- Especialidade 6 -->
+                <div class="specialty-item">
+                    <div class="specialty-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="specialty-title">Orientação Profissional</h3>
+                    <p class="specialty-description">Processo de autoconhecimento para escolha e transição de carreira, identificando valores, habilidades e interesses profissionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abordagem -->
+    <section class="approach" id="approach">
+        <div class="container">
+            <h2>Minha Abordagem</h2>
+            <div class="approach-content">
+                <div class="approach-text">
+                    <p>A Terapia Cognitivo-Comportamental (TCC) é uma abordagem psicológica baseada na premissa de que nossos pensamentos, emoções e comportamentos estão interconectados. Ao modificar padrões de pensamento disfuncionais, podemos alterar como nos sentimos e nos comportamos.</p>
+                    <p>Minha prática é focada em:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Identificar e modificar pensamentos automáticos negativos</li>
+                        <li>Desenvolver habilidades de regulação emocional</li>
+                        <li>Promover comportamentos mais adaptativos</li>
+                        <li>Trabalhar com metas específicas e mensuráveis</li>
+                        <li>Fornecer técnicas práticas para o dia a dia</li>
+                    </ul>
+                    <p>A terapia é um processo colaborativo onde você é o especialista em sua própria experiência, e eu atuo como guia fornecendo as ferramentas e técnicas necessárias para sua jornada de transformação.</p>
+                    <a href="#contact" class="btn btn-primary">Entrar em Contato</a>
+                </div>
+                <div class="approach-image">
+                    <!-- Imagem alternativa caso a original não carregue -->
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Abordagem Terapêutica" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'display:flex; align-items:center; justify-content:center; height:100%; padding:20px; text-align:center; background:linear-gradient(135deg, #AED9E0, #6B8CBC); color:#2C3E50; border-radius:10px;\'><div><i class=\'fas fa-brain\' style=\'font-size:3rem; margin-bottom:15px;\'></i><h3>Terapia Cognitivo-Comportamental</h3><p>Abordagem científica e eficaz para transformação pessoal</p></div></div>';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Benefícios da Terapia</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="benefit-title">Autoconhecimento</h3>
+                    <p>Compreenda melhor seus padrões de pensamento, emoções e comportamentos.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="benefit-title">Ferramentas Práticas</h3>
+                    <p>Adquira técnicas específicas para lidar com desafios emocionais no dia a dia.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="benefit-title">Bem-estar Emocional</h3>
+                    <p>Desenvolva resiliência e melhore sua qualidade de vida e relacionamentos.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="benefit-title">Equilíbrio</h3>
+                    <p>Encontre maior equilíbrio entre diferentes áreas da sua vida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Depoimentos</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"A terapia com a Dra. Marina me ajudou a superar minha ansiedade social. As técnicas que aprendi foram transformadoras e hoje me sinto muito mais confiante em situações sociais."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Ana L.</h4>
+                            <p>Paciente há 8 meses</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Estava há anos lutando contra a depressão. A abordagem da Dra. Marina foi fundamental para minha recuperação. Ela é extremamente competente e empática."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Cliente">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Carlos R.</h4>
+                            <p>Paciente há 1 ano</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"A terapia me ajudou a lidar com meu estresse no trabalho e melhorar meus relacionamentos. As sessões são sempre muito produtivas e saio com insights valiosos."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Juliana M.</h4>
+                            <p>Paciente há 6 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como funciona a primeira consulta?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A primeira consulta é uma sessão de avaliação onde conversaremos sobre suas queixas, histórico de vida e objetivos para a terapia. É uma oportunidade para nos conhecermos e definirmos juntos o plano de tratamento.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Com que frequência devo fazer terapia?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Geralmente recomendo sessões semanais no início do tratamento, especialmente para casos mais agudos. Conforme os sintomas melhoram, podemos ajustar a frequência para quinzenal ou mensal. A frequência ideal será discutida e acordada conforme suas necessidades.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto tempo dura o tratamento?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A duração do tratamento varia conforme cada caso e objetivos estabelecidos. Algumas pessoas alcançam seus objetivos em poucos meses, enquanto outras podem se beneficiar de um acompanhamento mais prolongado. A TCC é geralmente considerada uma terapia de curto a médio prazo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Você atende online?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, ofereço atendimento tanto presencial quanto online através de plataformas seguras de videoconferência. A terapia online tem se mostrado tão eficaz quanto a presencial para a maioria dos casos.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Você atende por convênio?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Atualmente atendo apenas de forma particular. No entanto, posso fornecer recibos para possível reembolso junto ao seu convênio, dependendo das regras do seu plano de saúde.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Rua das Flores, 123 - Jardins<br>São Paulo - SP, 01415-000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Horário de Atendimento</h3>
+                            <p>Segunda a Sexta: 8h às 19h<br>Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>(11) 3456-7890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>contato@marinasilvapsi.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3>Atendimento Online</h3>
+                            <p>Disponível para todo o Brasil</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" class="form-control" placeholder="Conte-me brevemente sobre o que gostaria de trabalhar na terapia..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dra. Marina Silva</h3>
+                    <p>Psicóloga Clínica especializada em Terapia Cognitivo-Comportamental. CRP: 06/123456</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#specialties">Especialidades</a></li>
+                        <li><a href="#approach">Abordagem</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Horários</h3>
+                    <ul class="footer-links">
+                        <li>Segunda a Sexta: 8h-19h</li>
+                        <li>Sábado: 8h-12h</li>
+                        <li>Domingo: Fechado</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Receba conteúdos sobre saúde mental e bem-estar.</p>
+                    <form>
+                        <input type="email" placeholder="Seu e-mail" class="form-control" style="margin-bottom: 10px;">
+                        <button type="submit" class="btn btn-accent" style="width: 100%;">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Dra. Marina Silva - Psicóloga Clínica. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito de rolagem suave para links âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Menu mobile
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Ajustar menu em redimensionamento
+        window.addEventListener('resize', () => {
+            if(window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Efeito de destaque no header ao rolar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
+                
+                // Fechar outras respostas abertas
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        item.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
+                    }
+                });
+                
+                // Alternar resposta atual
+                answer.classList.toggle('active');
+                toggle.classList.toggle('active');
+            });
+        });
+
+        // Formulário de contato
+        const contactForm = document.querySelector('.contact-form form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                this.reset();
+            });
+        }
+
+        // Adicionar ano atual no footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
